@@ -8,6 +8,7 @@ PEERTUBE_USERNAME="peertube"
 PEERTUBE_DB="peertube_prod"
 PEERTUBE_DB_PORT=5432
 PEERTUBE_DB_HOST="localhost"
+DATE=`date '+%Y-%m-%d %H:%M:%S'`
 
 #load my local variable, not needed by everyone
 if [ -f local.sh ] 
@@ -18,7 +19,7 @@ fi
 mkdir -p "$DESTINATION_DIR"
 #save DB
 #requires ~/.pgpass file localhost:5432:peertube-db:peertube-db-username:password
-pg_dump --format=custom --file "$DESTINATION_DIR/peertube.dump" -p $PEERTUBE_DB_PORT -h $PEERTUBE_DB_HOST -U $PEERTUBE_USERNAME $PEERTUBE_DB 
+pg_dump --format=custom --file "$DESTINATION_DIR/peertube $DATE.dump" -p $PEERTUBE_DB_PORT -h $PEERTUBE_DB_HOST -U $PEERTUBE_USERNAME $PEERTUBE_DB
 
 #save config + storage
 rsync -av --del --stats "$PEERTUBE_CONFIG" "$DESTINATION_DIR"
