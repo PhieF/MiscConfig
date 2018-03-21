@@ -9,6 +9,12 @@ PEERTUBE_DB="peertube_prod"
 PEERTUBE_DB_PORT=5432
 PEERTUBE_DB_HOST="localhost"
 
+#load my local variable, not needed by everyone
+if [ -f local.sh ] 
+   then
+   source local.sh
+fi
+
 mkdir -p "$DESTINATION_DIR"
 #save DB
 #requires ~/.pgpass file localhost:5432:peertube-db:peertube-db-username:password
