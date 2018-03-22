@@ -29,6 +29,7 @@ while($cont){
 	$followersstr= file_get_contents($url."/api/v1/server/followers?start=".$start);
 	$followers = json_decode($followersstr, true);
 	foreach($followers['data'] as $follower){
+		if (strpos($follower['follower']['url'], 'accounts/peertube') !== false)
 			array_push($f,$follower['follower']['url']);
 	}
 	$start+=15;
