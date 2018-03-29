@@ -5,11 +5,34 @@
   --less-dark-blue: #4c4c6f;
 }
 
-.upload-button[_ngcontent-c1], .upload-button[_ngcontent-c1]:active, .upload-button[_ngcontent-c1]:focus, menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2], menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2]:active, menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2]:focus {
-    color: #fff;
-    background-color: var(--blue-button);
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] {
+margin-left:0px;
+}
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] a[_ngcontent-c2]{
+height:100%;
+line-height:40px;
+padding-left: 26px;
+display:block;
+}
+menu[_ngcontent-c2] .block-title[_ngcontent-c2] {
+padding-left: 26px
+}
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] a[_ngcontent-c2]:hover {
+background:var(  --less-dark-blue);
+
 }
 
+
+.header[_ngcontent-c0] .top-left-block[_ngcontent-c0] .icon.icon-menu[_ngcontent-c0] {
+}
+.upload-button[_ngcontent-c1], .upload-button[_ngcontent-c1]:active, .upload-button[_ngcontent-c1]:focus, menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2], menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2]:active, menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2]:focus, .privacy-concerns .privacy-concerns-okay {
+    color: #fff;
+    background-color: var(--blue-button) !important;
+}
+
+ .privacy-concerns a{
+    color: var(--blue-button) !important;
+}
 
 
 input[type="submit"], input[type="submit"]:active, 
@@ -21,7 +44,7 @@ input[type="submit"], input[type="submit"]:active,
 
  input[type="submit"]:hover,  .button-file:hover,
 .add-button:hover,
-.submit-button:hover {
+.submit-button:hover, .privacy-concerns .privacy-concerns-okay:hover {
     background-color: var(--blue-button-hover) !important;
 }
 
@@ -40,8 +63,11 @@ z-index:1;
     background-color: var(--dark-blue);
     color: white;
 }
+my-header {
+    color: black !important;
+}
 menu[_ngcontent-c2] {
-    background-color: var(--dark-blue);
+    background-color: black;
 }
 .main-col {
 	transition: margin-left 0.5s ease-in-out .1s;
