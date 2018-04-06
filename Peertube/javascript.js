@@ -1,1 +1,0 @@
-document.getElementsByClassName("icon-logo")[0].style.display="none";
