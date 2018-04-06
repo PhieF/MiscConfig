@@ -1,0 +1,115 @@
+:root {
+  --blue-button: #2079ff;
+  --blue-button-hover: #589aff;
+  --dark-blue: #242d48;
+  --less-dark-blue: #4c4c6f;
+}
+
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] {
+margin-left:0px;
+}
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] a[_ngcontent-c2]{
+height:100%;
+line-height:40px;
+padding-left: 26px;
+display:block;
+}
+menu[_ngcontent-c2] .block-title[_ngcontent-c2] {
+padding-left: 26px
+}
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] a[_ngcontent-c2]:hover {
+background:var(  --less-dark-blue);
+
+}
+
+
+.header[_ngcontent-c0] .top-left-block[_ngcontent-c0] .icon.icon-menu[_ngcontent-c0] {
+}
+.upload-button[_ngcontent-c1], .upload-button[_ngcontent-c1]:active, .upload-button[_ngcontent-c1]:focus, menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2], menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2]:active, menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2]:focus, .privacy-concerns .privacy-concerns-okay {
+    color: #fff;
+    background-color: var(--blue-button) !important;
+}
+
+ .privacy-concerns a{
+    color: var(--blue-button) !important;
+}
+
+
+input[type="submit"], input[type="submit"]:active, 
+.button-file,
+.add-button,
+.submit-button{
+    background-color: var(--blue-button) !important;
+}
+
+ input[type="submit"]:hover,  .button-file:hover,
+.add-button:hover,
+.submit-button:hover, .privacy-concerns .privacy-concerns-okay:hover {
+    background-color: var(--blue-button-hover) !important;
+}
+
+ .upload-button[_ngcontent-c1]:hover, menu[_ngcontent-c2] .button-block[_ngcontent-c2] .login-button[_ngcontent-c2]:hover{
+    color: #fff;
+    background-color: var(--blue-button-hover);
+}
+
+.title-menu-left{
+z-index:1;
+
+}
+
+.header[_ngcontent-c0] {
+
+    background-color: var(--dark-blue);
+    color: white;
+}
+my-header {
+    color: black !important;
+}
+menu[_ngcontent-c2] {
+    background-color: black;
+}
+.main-col {
+	transition: margin-left 0.5s ease-in-out .1s;
+}
+
+.icon-logo{
+ display:none;
+}
+
+.header[_ngcontent-c0] .top-left-block[_ngcontent-c0] .icon.icon-menu[_ngcontent-c0] {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23FFFFFF' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'/%3E%3C/svg%3E");
+}
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] a[_ngcontent-c2] .icon.icon-videos-trending[_ngcontent-c2] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23FFFFFF' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+}
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] a[_ngcontent-c2] .icon.icon-videos-recently-added[_ngcontent-c2] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23FFFFFF' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E");
+}
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] a[_ngcontent-c2] .icon.icon-administration[_ngcontent-c2] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23FFFFFF' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z'/%3E%3C/svg%3E");
+}
+
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] a[_ngcontent-c2] .icon.icon-about[_ngcontent-c2] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23FFFFFF' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z'/%3E%3C/svg%3E");
+}
+
+menu[_ngcontent-c2] .panel-block[_ngcontent-c2] a[_ngcontent-c2] .icon.icon-videos-local[_ngcontent-c2] {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='%23FFFFFF' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+}
+
+.inner-form-title, .account-title{
+    color: var(--less-dark-blue)  !important;
+}
+
+input[type="checkbox"]:checked + label{
+    background: var(--less-dark-blue) !important;
+}
+
+p-table p-paginator .ui-paginator-bottom a.ui-state-active, p-table p-paginator .ui-paginator-bottom a.ui-state-active:active, p-table p-paginator .ui-paginator-bottom a.ui-state-active:focus, p-table p-paginator .ui-paginator-bottom a.ui-state-active:hover{
+    background: var(--less-dark-blue) !important;
+}
+
+.title-page.active, .title-page.title-page-single {
+    border-bottom: 2px solid var(--dark-blue) !important;
+}
