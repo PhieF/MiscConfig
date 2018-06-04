@@ -32,6 +32,11 @@
   margin-bottom:10px
  }
 }
+
+/* framapiaf */
 #framanav_container{
   display:none;
+}
+.ui {
+    padding-bottom: 42px;
 }
