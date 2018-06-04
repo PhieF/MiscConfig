@@ -1,0 +1,37 @@
+@media screen and (min-width:60px) {
+ .columns-area {
+  padding:0px
+ }
+ .react-swipeable-view-container .columns-area {
+  height:100% !important
+ }
+}
+
+@media screen and (min-width:360px) {
+ .tabs-bar {
+  margin:0px;margin-bottom:0
+ }
+ .search {
+  margin-bottom:0px
+ }
+}
+@media screen and (min-width:630px) {
+ .columns-area {
+  padding:10px
+ }
+ .react-swipeable-view-container .columns-area {
+  height:calc(100% - 20px)!important
+ }
+}
+
+@media screen and (min-width:630px) {
+ .tabs-bar {
+  margin:10px;margin-bottom:0
+ }
+ .search {
+  margin-bottom:10px
+ }
+}
+#framanav_container{
+  display:none;
+}
