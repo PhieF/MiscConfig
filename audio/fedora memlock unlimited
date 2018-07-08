@@ -1,0 +1,16 @@
+sudo nano /etc/security/limits.conf
+add
+* - memlock unlimited
+
+or
+
+@audio - memlock unlimited
+sudo useradd -g audio username
+
+
+and (this is the hardest part to find)
+sudo nano /etc/pam.d/su
+add
+session required  pam_limits.so
+
+otherwise /etc/security/limits.conf isn't used
