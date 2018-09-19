@@ -1,13 +1,12 @@
- menu{
- background: var(--mainBackgroundColor) !important;
- color:var(--mainForegroundColor) !important;
+menu{
+    background: var(--mainBackgroundColor) !important;
+    color:var(--mainForegroundColor) !important;
 }
 menu a {
- color: var(--mainForeBackgroundColor) !important;
+    color: var(--mainForeBackgroundColor) !important;
 }
 .menu-wrapper{
-box-shadow: 1px 3px 3px rgba(0,0,0,.16);
-
+    box-shadow: 1px 3px 3px rgba(0,0,0,.16);
 }
 
 .top-left-block {
@@ -17,14 +16,14 @@ box-shadow: 1px 3px 3px rgba(0,0,0,.16);
     margin: auto !important;
 }
 .icon-logo{
-display:none !important;
+    display:none !important;
 }
 
 #video-element-wrapper {
     background-color: var(--mainForeBackgroundColor) !important;
 }
 .video-bottom .video-info{
-width: calc(100% - 240px - 600px) !important;
+    width: calc(100% - 240px - 600px) !important;
 }
 
 
@@ -32,24 +31,22 @@ width: calc(100% - 240px - 600px) !important;
 /* recommendations */
 
 @media only screen and (min-width:1400px){
-  my-recommended-videos{
+    my-recommended-videos{
+        position:absolute;
+        right:0;
+        top:60px;
   
-  position:absolute;
-  right:0;
-  top:60px;
-  
-}
-.video-bottom, #video-element-wrapper{
-  
-  margin-right:300px !important;;
-}
+    }
+    .video-bottom, #video-element-wrapper{
+        margin-right:300px !important;;
+    }
    #video-element-wrapper{
-     margin-top:10px;
+       margin-top:10px;
    }
 }
 #content{
-background: rgba(255,255,255,.05);
+    background: rgba(255,255,255,.05);
 }
 .icon-moonsun{
-background-image: url("data:image/svg+xml,%3Csvg height%3D%22300px%22 width%3D%22300px%22 fill%3D%22%23b3b3b3%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 data-name%3D%22Layer 1%22 viewBox%3D%220 0 100 100%22 x%3D%220px%22 y%3D%220px%22%3E%3Ctitle%3EArtboard 633%3C%2Ftitle%3E%3Ccircle cx%3D%2250%22 cy%3D%226%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2250%22 cy%3D%2294%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%226%22 cy%3D%2250%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2294%22 cy%3D%2250%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2218%22 cy%3D%2218%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2282%22 cy%3D%2282%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2218%22 cy%3D%2282%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2282%22 cy%3D%2218%22 r%3D%224%22%2F%3E%3Cpath d%3D%22M82%2C50A32%2C32%2C0%2C1%2C0%2C50%2C82%2C32%2C32%2C0%2C0%2C0%2C82%2C50ZM50%2C26a23.67%2C23.67%2C0%2C0%2C1%2C5.87.76c4.36%2C9.93.57%2C19-4.66%2C24.29s-14.4%2C9.24-24.45%2C4.83A23.75%2C23.75%2C0%2C0%2C1%2C26%2C50%2C24%2C24%2C0%2C0%2C1%2C50%2C26Zm0%2C48a23.94%2C23.94%2C0%2C0%2C1-18.26-8.47%2C29.38%2C29.38%2C0%2C0%2C0%2C3.74.26%2C30.07%2C30.07%2C0%2C0%2C0%2C21.41-9.11%2C29.82%2C29.82%2C0%2C0%2C0%2C8.61-25A24%2C24%2C0%2C0%2C1%2C50%2C74Z%22%2F%3E%3C%2Fsvg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg height%3D%22300px%22 width%3D%22300px%22 fill%3D%22%23b3b3b3%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 data-name%3D%22Layer 1%22 viewBox%3D%220 0 100 100%22 x%3D%220px%22 y%3D%220px%22%3E%3Ctitle%3EArtboard 633%3C%2Ftitle%3E%3Ccircle cx%3D%2250%22 cy%3D%226%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2250%22 cy%3D%2294%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%226%22 cy%3D%2250%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2294%22 cy%3D%2250%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2218%22 cy%3D%2218%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2282%22 cy%3D%2282%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2218%22 cy%3D%2282%22 r%3D%224%22%2F%3E%3Ccircle cx%3D%2282%22 cy%3D%2218%22 r%3D%224%22%2F%3E%3Cpath d%3D%22M82%2C50A32%2C32%2C0%2C1%2C0%2C50%2C82%2C32%2C32%2C0%2C0%2C0%2C82%2C50ZM50%2C26a23.67%2C23.67%2C0%2C0%2C1%2C5.87.76c4.36%2C9.93.57%2C19-4.66%2C24.29s-14.4%2C9.24-24.45%2C4.83A23.75%2C23.75%2C0%2C0%2C1%2C26%2C50%2C24%2C24%2C0%2C0%2C1%2C50%2C26Zm0%2C48a23.94%2C23.94%2C0%2C0%2C1-18.26-8.47%2C29.38%2C29.38%2C0%2C0%2C0%2C3.74.26%2C30.07%2C30.07%2C0%2C0%2C0%2C21.41-9.11%2C29.82%2C29.82%2C0%2C0%2C0%2C8.61-25A24%2C24%2C0%2C0%2C1%2C50%2C74Z%22%2F%3E%3C%2Fsvg%3E") !important;
 }
