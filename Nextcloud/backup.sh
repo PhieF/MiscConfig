@@ -15,11 +15,11 @@ else
         fi
 
 DATE=`date '+%Y-%m-%d %H%M%S'`
-mysqldump -u "$3" -p"$4" "$5"  > "$DATE.sql"
-tar cfJ "$DATE.sql.tar.xz" "$DATE.sql"
-rm "$DATE.sql"
-scp "$DATE.sql.tar.xz" "$6/"
-rm "$DATE.sql.tar.xz"
+mysqldump -u "$3" -p"$4" "$5"  > "/tmp/$DATE.sql"
+tar cfJ "/tmp/$DATE.sql.tar.xz" "/tmp/$DATE.sql"
+rm "/tmp/$DATE.sql"
+scp "/tmp/$DATE.sql.tar.xz" "$6/"
+rm "/tmp/$DATE.sql.tar.xz"
 mv "$1"/nextcloud*.log* ./
 rsync -av --del --stats "$1" $protocol "$6"/data
 rsync -av --del --stats "$2" $protocol "$6"/nc
