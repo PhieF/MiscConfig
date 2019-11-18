@@ -3,8 +3,9 @@ Identitity servers are useful to make a link between your phone number / mail an
 
 to enable it you need to set a public_baseurl which is basically you matrix server url
 
+```
 public_baseurl: https://blabla
-
+```
 
 then enable identities servers
 ```
