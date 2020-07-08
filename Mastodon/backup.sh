@@ -17,7 +17,7 @@ fi
 mkdir -p "$DESTINATION_DIR"
 #save DB
 #requires ~/.pgpass file localhost:5432:peertube-db:peertube-db-username:password
-pg_dump --format=custom --file "/tmp/m$DATE.dump" -p $DB_PORT -h $DB_HOST -U $USERNAME $DB
+pg_dump --format=custom --file "/tmp/m$DATE.dump" -p $DB_PORT -h $DB_HOST -U $DB_USERNAME $DB
 scp "/tmp/m$DATE.dump" "$DESTINATION_DIR"/
 rm "/tmp/m$DATE.dump"
 #save config + storage
