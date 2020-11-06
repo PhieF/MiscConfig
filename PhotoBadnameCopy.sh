@@ -70,6 +70,7 @@ do
 			dest_dir="$DEPOT"/"$YR"/"$MTH"/"$DAY"
 			mkdir -p "$dest_dir"
 			mv "$file" "$dest_dir"/"$NAME"
+			md5array+=("$md5")
 		else
 			rm "$file"
 		fi
