@@ -10,6 +10,9 @@ protocol=""
 if [ "$#" -gt "7" ]
         then 
         protocol="-e $8"
+        IFS=':' read -r -a array <<< "$DESTINATION_DIR"
+        ssh ${array[0]} "mkdir -p ${array[1]}/data"
+        ssh ${array[0]} "mkdir -p ${array[1]}/synapse_conf"
 else
         mkdir -p "$7"/data/
         fi

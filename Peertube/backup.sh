@@ -21,10 +21,13 @@ protocol=""
 if [ "$#" -gt "8" ]
         then 
         protocol="-e $9"
+	IFS=':' read -r -a array <<< "$DESTINATION_DIR"
+	ssh ${array[0]} "mkdir -p ${array[1]}/data/config"
+        ssh ${array[0]} "mkdir -p ${array[1]}/data/storage"
 else
         mkdir -p "$8"/data/
 fi
-mkdir -p "$DESTINATION_DIR"
+#mkdir -p "$DESTINATION_DIR"
 #save DB
 #requires ~/.pgpass file localhost:5432:peertube-db:peertube-db-username:password
 pg_dump --format=custom --file "/tmp/peertube $DATE.dump" -p $PEERTUBE_DB_PORT -h $PEERTUBE_DB_HOST -U $PEERTUBE_USERNAME $PEERTUBE_DB
