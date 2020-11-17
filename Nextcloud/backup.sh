@@ -16,7 +16,7 @@ else
 
 DATE=`date '+%Y-%m-%d %H%M%S'`
 mysqldump -u "$3" -p"$4" "$5"  > "/tmp/$DATE.sql"
-tar cfJ "/tmp/$DATE.sql.tar.xz" "/tmp/$DATE.sql"
+XZ_OPT="--threads=8" tar cfJ "/tmp/$DATE.sql.tar.xz" "/tmp/$DATE.sql"
 rm "/tmp/$DATE.sql"
 scp "/tmp/$DATE.sql.tar.xz" "$6/"
 rm "/tmp/$DATE.sql.tar.xz"
