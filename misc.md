@@ -27,3 +27,10 @@ build
 make dev-setup
 
 make build-js
+
+
+
+
+# Stream movie with subs to rtmp with cvlc
+
+cvlc --sub-file subtitles.srt -vvv "movie.mp4" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=mp3,ab=128,channels=2,samplerate=44100,soverlay}:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://address}'
