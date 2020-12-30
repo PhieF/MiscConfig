@@ -33,6 +33,8 @@ make build-js
 
 # Stream movie with subs to rtmp with cvlc
 
+replace address, movie.mp4 and subtitles.srt by what you need (address is the url to the stream)
+
 ```
 cvlc --sub-file subtitles.srt -vvv "movie.mp4" --sout '#transcode{vcodec=h264,scale=Auto,width=1280,height=720,acodec=mp3,ab=128,channels=2,samplerate=44100,soverlay}:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://address}'
 
