@@ -1,0 +1,1 @@
+cp data/* /home/matrix-synapse/ -R && chown matrix-synapse /home/matrix-synapse/ -R && cp psql.dump ../ && sudo -u postgres dropdb synapse  && sudo -u postgres pg_restore -c -C -d postgres psql.dump 
