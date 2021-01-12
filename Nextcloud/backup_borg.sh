@@ -1,15 +1,15 @@
 
 #!/bin/bash
 
-if [ "$#" -lt "5" ]
+if [ "$#" -lt "6" ]
         then 
-        echo "Usage nextcloud.sh datadir ncdir dbusername dbpassword database backupdir [protocol]";
+        echo "Usage nextcloud.sh datadir ncdir dbusername dbpassword database backupdir tmp_mount_name [protocol]";
         exit 1
         fi
 protocol=""
-if [ "$#" -gt "6" ]
+if [ "$#" -gt "7" ]
         then 
-        protocol="-e $7"
+        protocol="-e $8"
         IFS=':' read -r -a array <<< "$6"
         ssh ${array[0]} "mkdir -p ${array[1]}"
 else
@@ -17,7 +17,7 @@ else
         fi
 borg init $6 --encryption=none
 DATE=`date '+%Y-%m-%d %H%M%S'`
-BACKUPNAME=`basename "$2"_nextcloud`
+BACKUPNAME="$7"_nextcloud
 cd /tmp
 mkdir "$BACKUPNAME"
 cd "$BACKUPNAME"
@@ -34,7 +34,7 @@ mysqldump -u "$3" -p"$4" "$5"  > "dump.sql"
 mv "$1"/nextcloud*.log* ./
 #rsync -av --del --stats "$1" $protocol "$6"/data
 #rsync -av --del --stats "$2" $protocol "$6"/nc
-borg create -v --stats "$6"::"${DATE}" nc data "dump.sql" --compression=lz4
+borg create -v --list "$6"::"${DATE}" nc data "dump.sql" --compression=lz4
 rm "/tmp/$SQLNAME.sql"
 mv nextcloud*.log* "$1"/
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$6"

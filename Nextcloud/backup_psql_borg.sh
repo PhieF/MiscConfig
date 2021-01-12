@@ -1,15 +1,15 @@
 
 #!/bin/bash
 
-if [ "$#" -lt "6" ]
+if [ "$#" -lt "7" ]
         then 
-        echo "Usage nextcloud.sh datadir ncdir dbusername database dbport dbserver backupdir [protocol]";
+        echo "Usage nextcloud.sh datadir ncdir dbusername database dbport dbserver backupdir tmp_mount_name [protocol]";
         exit 1
         fi
 protocol=""
-if [ "$#" -gt "7" ]
+if [ "$#" -gt "8" ]
         then 
-        protocol="-e $8"
+        protocol="-e $9"
         IFS=':' read -r -a array <<< "$7"
         ssh ${array[0]} "mkdir -p ${array[1]}"
 else
@@ -17,7 +17,7 @@ else
         fi
 borg init $7 --encryption=none
 DATE=`date '+%Y-%m-%d %H%M%S'`
-BACKUPNAME=`basename "$1"`_nextcloud
+BACKUPNAME="$8"_nextcloud
 cd /tmp
 mkdir "$BACKUPNAME"
 cd "$BACKUPNAME"
