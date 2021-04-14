@@ -13,7 +13,7 @@ if [ "$#" -gt "8" ]
         IFS=':' read -r -a array <<< "$6"
         ssh ${array[0]} "mkdir -p ${array[1]}"
 else
-        mkdir -p "$6"/data/
+        mkdir -p "$6"
         fi
 cd "$8"
 borg init $6 --encryption=none
@@ -30,7 +30,7 @@ sudo mount --bind "$1" /tmp/"$BACKUPNAME"/data
 sudo mount --bind "$2" /tmp/"$BACKUPNAME"/nc
 
 cd "$8"
-docker-compose exec db sh -c 'mysqldump -u '"$3"' -p'"$4"' '"$5"'  >/"dump.sql"'
+docker-compose exec -T db sh -c 'mysqldump -u '"$3"' -p'"$4"' '"$5"'  >/"dump.sql"'
 docker cp "$(docker-compose ps -q db)":/"dump.sql" /tmp/"$BACKUPNAME"/dump.sql
 cd /tmp/"$BACKUPNAME"
 #XZ_OPT="--threads=8" tar cfJ "/tmp/$DATE.sql.tar.xz" "/tmp/$DATE.sql"

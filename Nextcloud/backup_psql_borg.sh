@@ -23,15 +23,19 @@ mkdir "$BACKUPNAME"
 cd "$BACKUPNAME"
 mkdir nc
 mkdir data
-sudo mount --bind "$1" /tmp/"$BACKUPNAME"/data
-sudo mount --bind "$2" /tmp/"$BACKUPNAME"/nc
+sudo umount -R /tmp/"$BACKUPNAME"/data || true
+sudo umount -R /tmp/"$BACKUPNAME"/nc || true
+sudo mount --rbind "$1" /tmp/"$BACKUPNAME"/data
+sudo mount --rbind "$2" /tmp/"$BACKUPNAME"/nc
+sudo mount --make-rslave /tmp/"$BACKUPNAME"/data
+sudo mount --make-rslave /tmp/"$BACKUPNAME"/nc
 
 #requires ~/.pgpass file dbserver:dbport:database:dbusername:dbpassword
 pg_dump --format=custom --file "sql.dump" -p "$5" -h "$6" -U "$3" "$4"
 mv "$1"/nextcloud*.log* ./
 
-borg create -v --stats "$7"::"${DATE}" nc data "sql.dump" --compression=lz4
+borg create -v --stats --files-cache mtime,size --list "$7"::"${DATE}" nc data "sql.dump" --compression=lz4
 rm "sql.dump"
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$7"
-sudo umount /tmp/"$BACKUPNAME"/nc
-sudo umount /tmp/"$BACKUPNAME"/data
+sudo umount -R /tmp/"$BACKUPNAME"/nc
+sudo umount -R /tmp/"$BACKUPNAME"/data

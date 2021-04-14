@@ -30,10 +30,10 @@ fi
 #mkdir -p "$DESTINATION_DIR"
 #save DB
 #requires ~/.pgpass file localhost:5432:peertube-db:peertube-db-username:password
-pg_dump --format=custom --file "/tmp/peertube $DATE.dump" -p $PEERTUBE_DB_PORT -h $PEERTUBE_DB_HOST -U $PEERTUBE_USERNAME $PEERTUBE_DB
-tar cfJ "/tmp/$DATE.dump.tar.xz" "/tmp/peertube $DATE.dump"
-scp "/tmp/$DATE.dump.tar.xz" "$DESTINATION_DIR"
-rm "/tmp/$DATE.dump.tar.xz" "/tmp/peertube $DATE.dump"
+mkdir "/tmp/$DATE/"
+pg_dump --format=custom --file "/tmp/$DATE/dump.sql" -p $PEERTUBE_DB_PORT -h $PEERTUBE_DB_HOST -U $PEERTUBE_USERNAME $PEERTUBE_DB
+scp "/tmp/$DATE/dump.sql" "$DESTINATION_DIR"
+rm "/tmp/$DATE/dump.sql"
 
 #save config + storage
 rsync -av --del --stats "$PEERTUBE_CONFIG" "$DESTINATION_DIR/data/config"

@@ -48,7 +48,7 @@ sudo mount --make-rslave /tmp/"$BACKUPNAME"/storage
 #requires ~/.pgpass file localhost:5432:peertube-db:peertube-db-username:password
 pg_dump --format=custom --file "dump.sql" -p $PEERTUBE_DB_PORT -h $PEERTUBE_DB_HOST -U $PEERTUBE_USERNAME $PEERTUBE_DB
 #save config + storage
-borg create -v -p --list --files-cache mtime,size,inode "$8"::"${DATE}" config storage "dump.sql" --compression=lz4
+borg create -v -p --list --files-cache mtime,size "$8"::"${DATE}" config storage "dump.sql" --compression=lz4
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$8"
 umount -R /tmp/"$BACKUPNAME"/config
 umount -R /tmp/"$BACKUPNAME"/storage

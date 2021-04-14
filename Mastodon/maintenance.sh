@@ -1,5 +1,5 @@
 #!/bin/bash
-
+rm mastodon.old -R
 cd mastodon
 docker-compose run --rm web bundle exec bin/tootctl media remove
 cd ..
