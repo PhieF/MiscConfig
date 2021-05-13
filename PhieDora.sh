@@ -56,4 +56,6 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 sudo dnf groupupdate sound-and-video
 
 
+#night theme
 
+# install and set https://extensions.gnome.org/extension/2236/night-theme-switcher/
