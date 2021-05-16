@@ -59,3 +59,5 @@ sudo dnf groupupdate sound-and-video
 #night theme
 
 # install and set https://extensions.gnome.org/extension/2236/night-theme-switcher/
+
+#todo  and set center-new-windows in org.gnome.mutter to true
