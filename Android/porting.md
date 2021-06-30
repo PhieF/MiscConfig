@@ -6,6 +6,18 @@ https://www.youtube.com/watch?list=PLRJ9-cX1yE1nnhWBrZtuVz5YC2OPfQVVp
 
 /!\ need to be rooted /!\
 
+# Rooting
+
+I guess it depends on device, first, try to find out if somebody already did it.
+
+On GS290, I managed to extract firmware with SP Flash Tool (for MTK)
+
+from there I could get a working boot.img
+
+When you have a stock boot.img, you can then try this tutorial
+
+https://www.droidwin.com/root-android-devices-without-twrp-recovery/
+
 
 Some files and info
 ```
