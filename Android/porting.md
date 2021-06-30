@@ -4,6 +4,9 @@ https://www.youtube.com/watch?list=PLRJ9-cX1yE1nnhWBrZtuVz5YC2OPfQVVp
 
 
 
+/!\ need to be rooted /!\
+
+
 Some files and info
 ```
 mkdir my_new_device
@@ -17,7 +20,7 @@ adb pull /proc/config.gz ./kernel_build_config.gz #contains config file for kern
 adb pull /proc/cmdline ./kernel_commandline #contains commandline for booting kernel
 ```
 
-Partitionniong, file system, etc
+## Partitionniong, file system, etc
 
 
 sometimes 
@@ -38,9 +41,29 @@ for example
 
 boot -> /dev/block/mmcblk0p21
 
+adb shell fdisk -l /dev/block/mmcblk0 | tee fdisk.txt
+
+adb pull /fstab* ./
 
 
-keep last log:
+## keep last log:
 
 adb pull /cache/recovery/last_log
+
+## grab partitions
+
+we are going to save some partitions
+
+adb shell
+
+dd if=/dev/block/by-name/boot /sdcard/boot.img
+
+I would also add
+
+dd if=/dev/block/by-name/system /sdcard/system.img
+
+dd if=/dev/block/by-name/product /sdcard/product.img
+
+dd if=/dev/block/by-name/vendor /sdcard/vendor.img
+
 
