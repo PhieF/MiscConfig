@@ -28,6 +28,19 @@ when mtd not available
 https://youtu.be/UmVAQ1YFfRc?t=441
 
 
-cat /proc/partitions
+adb pull /proc/partitions ./
 
+to find out which partition is which
+
+ls -l /dev/block/by-name
+
+for example
+
+boot -> /dev/block/mmcblk0p21
+
+
+
+keep last log:
+
+adb pull /cache/recovery/last_log
 
