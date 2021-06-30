@@ -20,6 +20,11 @@ adb pull /proc/config.gz ./kernel_build_config.gz #contains config file for kern
 adb pull /proc/cmdline ./kernel_commandline #contains commandline for booting kernel
 ```
 
+
+## keep last log:
+
+adb pull /cache/recovery/last_log
+
 ## Partitionniong, file system, etc
 
 
@@ -45,10 +50,13 @@ adb shell fdisk -l /dev/block/mmcblk0 | tee fdisk.txt
 
 adb pull /fstab* ./
 
+get Size of partitions:
 
-## keep last log:
+blockdev --getsize64 /dev/block/by-name/partition
 
-adb pull /cache/recovery/last_log
+For all:
+
+for i in /dev/block/by-name/* ; do echo $i >> /sdcard/partition_size; blockdev --getsize64 ./"$i" >> /sdcard/partition_size; done 
 
 ## grab partitions
 
