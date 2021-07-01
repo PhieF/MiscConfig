@@ -77,7 +77,7 @@ we are going to save some partitions
 
 adb shell
 
-dd if=/dev/block/by-name/boot /sdcard/files_to_pull/boot.img
+dd if=/dev/block/by-name/boot of=/sdcard/files_to_pull/boot.img
 
 I would also add
 
