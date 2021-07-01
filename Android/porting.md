@@ -26,16 +26,18 @@ cd my_new_device
 mkdir device_tree
 mkdir files_needed_to_work
 cd files_needed_to_work
-
-adb shell getprop > all_prop
-adb pull /proc/config.gz ./kernel_build_config.gz #contains config file for kernel
-adb pull /proc/cmdline ./kernel_commandline #contains commandline for booting kernel
+adb shell
+mkdir /sdcard/files_to_pull
+su
+getprop > /sdcard/files_to_pull/all_prop
+cp /proc/config.gz /sdcard/files_to_pull/kernel_build_config.gz #contains config file for kernel
+cp /sdcard/cmdline /sdcard/files_to_pull/kernel_commandline #contains commandline for booting kernel
 ```
 
 
 ## keep last log:
 
-adb pull /cache/recovery/last_log
+cp /cache/recovery/last_log /sdcard/files_to_pull/
 
 ## Partitionniong, file system, etc
 
@@ -47,18 +49,17 @@ when mtd not available
 
 https://youtu.be/UmVAQ1YFfRc?t=441
 
-
-adb pull /proc/partitions ./
+cp /proc/partitions /sdcard/files_to_pull/
 
 to find out which partition is which
 
-ls -l /dev/block/by-name
+ls -l /dev/block/by-name > /sdcard/files_to_pull/ls_block_by_name
 
 for example
 
 boot -> /dev/block/mmcblk0p21
 
-adb shell fdisk -l /dev/block/mmcblk0 | tee fdisk.txt
+fdisk -l /dev/block/mmcblk0 | tee /sdcard/files_to_pull/fdisk.txt
 
 adb pull /fstab* ./
 
@@ -68,7 +69,7 @@ blockdev --getsize64 /dev/block/by-name/partition
 
 For all:
 
-for i in /dev/block/by-name/* ; do echo $i >> /sdcard/partition_size; blockdev --getsize64 ./"$i" >> /sdcard/partition_size; done 
+for i in /dev/block/by-name/* ; do echo $i >> /sdcard/partition_size; blockdev --getsize64 ./"$i" >> /sdcard/files_to_pull/partition_size; done 
 
 ## grab partitions
 
@@ -76,14 +77,14 @@ we are going to save some partitions
 
 adb shell
 
-dd if=/dev/block/by-name/boot /sdcard/boot.img
+dd if=/dev/block/by-name/boot /sdcard/files_to_pull/boot.img
 
 I would also add
 
-dd if=/dev/block/by-name/system /sdcard/system.img
+dd if=/dev/block/by-name/system /sdcard/files_to_pull/system.img
 
-dd if=/dev/block/by-name/product /sdcard/product.img
+dd if=/dev/block/by-name/product /sdcard/files_to_pull/product.img
 
-dd if=/dev/block/by-name/vendor /sdcard/vendor.img
+dd if=/dev/block/by-name/vendor /sdcard/files_to_pull/vendor.img
 
 
