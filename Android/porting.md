@@ -18,7 +18,7 @@ When you have a stock boot.img, you can then try this tutorial
 
 https://www.droidwin.com/root-android-devices-without-twrp-recovery/
 
-# Note on video "making a vendor file"
+## Note on video "making a vendor file"
 
 We don't seem to be using add_lunch_combo anymore and vendorsetup.sh
 
