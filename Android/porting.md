@@ -18,6 +18,20 @@ When you have a stock boot.img, you can then try this tutorial
 
 https://www.droidwin.com/root-android-devices-without-twrp-recovery/
 
+# Note on video "making a vendor file"
+
+We don't seem to be using add_lunch_combo anymore and vendorsetup.sh
+
+Instead, in AndroidProduct.mk, add
+```
+COMMON_LUNCH_CHOICES += \
+    lineage_device-userdebug \
+    lineage_device-user \
+    lineage_device-eng \
+ ```
+    
+    
+    
 
 Some files and info
 ```
