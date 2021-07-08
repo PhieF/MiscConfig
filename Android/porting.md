@@ -117,3 +117,19 @@ exit
 cd files_needed_to_work
 adb pull /sdcard/files_to_pull/* ./
 ```
+
+
+One good thing to try now on your computer, is mounting /system and /vendor since you will need to grab files from these partitions
+
+If you've extracted vendor and system, you can try to mount them directly, but perhaps you will need to use simg2img on these images to convert them to mountable images
+
+If you hesitate or can't mount these partitions, try to adb pull /system ./ You might need to be su, then 
+
+```
+adb shell
+su
+cp /system /sdcard/ -R
+exit
+exit
+adb pull /sdcard/system ./
+```
