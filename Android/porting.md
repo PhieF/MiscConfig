@@ -1,7 +1,14 @@
+I work at /e/, I'm doing this document for /e/
+
 # Useful things to read or watch
+
+most of this document is based on:
 
 https://www.youtube.com/watch?list=PLRJ9-cX1yE1nnhWBrZtuVz5YC2OPfQVVp
 
+## Tools
+
+https://github.com/cfig/Android_boot_image_editor
 
 
 /!\ need to be rooted /!\
