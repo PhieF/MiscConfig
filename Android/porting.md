@@ -151,5 +151,27 @@ adb pull /sdcard/system ./
 ```
 
 
-## Breaking Down Boot Images https://www.youtube.com/watch?v=_0KjhGEbWZY&list=PLRJ9-cX1yE1nnhWBrZtuVz5YC2OPfQVVp&index=10
+## Breaking Down Boot Images 
+https://www.youtube.com/watch?v=_0KjhGEbWZY&list=PLRJ9-cX1yE1nnhWBrZtuVz5YC2OPfQVVp&index=10
+
+I personnally don't use the same tools as the video but this one specific https://github.com/cfig/Android_boot_image_editor
+
+Git clone this project somewhere, then put the previously retrieved boot.img in the same folder, execute
+
+```
+./gradlew unpack
+```
+it should unpack the boot.img, you should see the result in build/unzip_boot. In there you will have the kernel, the dtb, the commandline, the ramdisk (both compressed and extracted)
+in the extracted ramdisk you should see the fstab, sometimes init.rc files, I would recommand you to read a bit about these files before goint further
+
+To repack, simply run a 
+```
+./gradlew pack
+```
+but that's not necessary here since we haven't modified anything. If you want to reflash the repacked boot.img, in case you've modified something, just flash the newly generated boot.img.signed (be aware that this could brick your phone)
+
+```
+fastboot version 30.0.5
+fastboot flash --disable-verity --disable-verification boot boot.img.signed
+```
 
