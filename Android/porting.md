@@ -8,7 +8,7 @@ https://www.youtube.com/watch?list=PLRJ9-cX1yE1nnhWBrZtuVz5YC2OPfQVVp
 
 ## Tools
 
-https://github.com/cfig/Android_boot_image_editor
+Extract and edit boot, and other images https://github.com/cfig/Android_boot_image_editor
 
 
 /!\ need to be rooted /!\
