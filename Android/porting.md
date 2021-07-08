@@ -10,6 +10,15 @@ https://www.youtube.com/watch?list=PLRJ9-cX1yE1nnhWBrZtuVz5YC2OPfQVVp
 
 Extract and edit boot, and other images https://github.com/cfig/Android_boot_image_editor
 
+Same kind of tools but advised by the video 
+
+http://www.mediafire.com/download/zl80gh0t310trla/unpack-bootimg.pl
+
+http://www.mediafire.com/download/xdmd278n17gm58h/unmkbootimg
+
+http://www.mediafire.com/download/byf0tw4ga2mqtw0/repack-bootimg.pl
+
+http://www.mediafire.com/download/7cmi548pzetc6c4/mkbootimg
 
 /!\ need to be rooted /!\
 
@@ -140,3 +149,7 @@ exit
 exit
 adb pull /sdcard/system ./
 ```
+
+
+## Breaking Down Boot Images https://www.youtube.com/watch?v=_0KjhGEbWZY&list=PLRJ9-cX1yE1nnhWBrZtuVz5YC2OPfQVVp&index=10
+
