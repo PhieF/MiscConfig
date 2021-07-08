@@ -83,22 +83,37 @@ blockdev --getsize64 /dev/block/by-name/partition
 
 For all:
 
-for i in /dev/block/by-name/* ; do echo $i >> /sdcard/partition_size; blockdev --getsize64 ./"$i" >> /sdcard/files_to_pull/partition_size; done 
+for i in /dev/block/by-name/* ; do echo $i >> /sdcard/partition_size; blockdev --getsize64 ./"$i" >> /sdcard/files_to_pull/partition_size_bytes; done 
+
+This is the size in bytes, we will need to convert them into number of blocks, to do so we will need the block size
 
 ## grab partitions
 
 we are going to save some partitions
 
 adb shell
-
+```
 dd if=/dev/block/by-name/boot of=/sdcard/files_to_pull/boot.img
+```
 
 I would also add
+```
 
 dd if=/dev/block/by-name/system /sdcard/files_to_pull/system.img
 
 dd if=/dev/block/by-name/product /sdcard/files_to_pull/product.img
 
 dd if=/dev/block/by-name/vendor /sdcard/files_to_pull/vendor.img
+```
 
+Then, retrieve all these files:
 
+```
+adb shell
+su
+chmod 700 /sdcard/files_to_pull -R
+exit
+exit
+cd files_needed_to_work
+adb pull /sdcard/files_to_pull/* ./
+```
