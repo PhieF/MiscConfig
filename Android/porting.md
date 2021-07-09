@@ -164,6 +164,8 @@ Git clone this project somewhere, then put the previously retrieved boot.img in 
 it should unpack the boot.img, you should see the result in build/unzip_boot. In there you will have the kernel, the dtb, the commandline, the ramdisk (both compressed and extracted)
 in the extracted ramdisk you should see the fstab, sometimes init.rc files, I would recommand you to read a bit about these files before goint further
 
+In my specific case, I don't have init files inside the boot.img, instead they are in vendors, /vendor/etc/init
+
 To repack, simply run a 
 ```
 ./gradlew pack
