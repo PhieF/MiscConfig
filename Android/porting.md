@@ -177,3 +177,19 @@ fastboot version 30.0.5
 fastboot flash --disable-verity --disable-verification boot boot.img.signed
 ```
 
+
+## Extracting Vendor Files
+
+Watch https://www.youtube.com/watch?v=ivyrq_aDf58&list=PLRJ9-cX1yE1nnhWBrZtuVz5YC2OPfQVVp&index=11
+
+The purpose of this part is to create the vendor tree
+
+It can be tricky to know which vendor files we need and whoch ones we don't. I guess that comes with experience. 
+One thing I'd like to add is to make sure to extract init files
+
+If you use an already made proprietary_files, I would recommand to put the the output of ./extract-files.sh somewhere so as you could remember which files failed to copy
+
+```
+./extract-files.sh > output-extract-files
+```
+
