@@ -20,6 +20,8 @@ http://www.mediafire.com/download/byf0tw4ga2mqtw0/repack-bootimg.pl
 
 http://www.mediafire.com/download/7cmi548pzetc6c4/mkbootimg
 
+https://github.com/ShivamKumarJha/android_tools
+
 /!\ need to be rooted /!\
 
 # Rooting
@@ -192,4 +194,9 @@ If you use an already made proprietary_files, I would recommand to put the the o
 ```
 ./extract-files.sh > output-extract-files
 ```
+
+I'm adding these tools that can be really useful for this part
+
+https://github.com/ShivamKumarJha/android_tools
+
 
