@@ -14,8 +14,7 @@ On each midi track, right click in editor, Channel selector, "use a single fixed
 Then, when playing the piano, select the right channel on YOUR piano
 
 
-
-
+If you can't change midi channel of your device, QMidiRoute is your friend
 
 
 
