@@ -1,3 +1,15 @@
+# Windows VST On Linux
+
+## EWQLSO
+
+Special case for EastWest Quantum Leap Symphonic Orchestra Gold Edition
+
+This one WON'T work with yabridge, it requires Carla
+
+To add Carla, add a midi bus with FLEXIBLE E/S (in Pin Mode) otherwise: No sound.
+
+
+
 #Midi
 
 Use one VST for multiple midi tracks:
