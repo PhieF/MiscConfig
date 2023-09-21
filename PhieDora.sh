@@ -12,7 +12,7 @@ fi
 
 #3rd party repo
 
-sudo dnf install fedora-workstation-repositories 
+sudo dnf install -y fedora-workstation-repositories 
 
 sudo dnf config-manager --set-enabled google-chrome
 
@@ -21,6 +21,8 @@ sudo dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 sudo dnf config-manager --set-enabled rpmfusion-nonfree-steam
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak install --user -y flathub com.mattjakeman.ExtensionManager
 
 
 
@@ -51,10 +53,10 @@ sudo dnf install gnome-extensions-app
 
 #h264
 
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf groupupdate sound-and-video
-
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 
 #night theme
 
