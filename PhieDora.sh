@@ -58,6 +58,10 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 sudo dnf groupupdate sound-and-video
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 
+#hardware acceleration for intel
+sudo dnf install -y intel-media-driver
+
+
 #night theme
 
 # install and set https://extensions.gnome.org/extension/2236/night-theme-switcher/
