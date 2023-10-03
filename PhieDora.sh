@@ -22,7 +22,7 @@ sudo dnf config-manager --set-enabled rpmfusion-nonfree-steam
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak install --user -y flathub com.mattjakeman.ExtensionManager
+flatpak install -y flathub com.mattjakeman.ExtensionManager
 
 
 
@@ -42,9 +42,9 @@ gsettings set org.gnome.desktop.wm.preferences button-layout 'menu:minimize,maxi
 # gnome-extensions enable reference-to-extension
 
 
-sudo dnf install gnome-extensions-app
+sudo dnf install -y gnome-extensions-app
 
-
+flatpak install -y flathub org.mozilla.firefox
 #gsconnect
 
 
@@ -60,7 +60,8 @@ sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 
 #hardware acceleration for intel
 sudo dnf install -y intel-media-driver
-
+#for amd
+sudo dnf install -y  libavcodec-freeworld mesa-va-drivers-freeworld
 
 #night theme
 
