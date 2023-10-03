@@ -63,6 +63,14 @@ sudo dnf install -y intel-media-driver
 #for amd
 sudo dnf install -y  libavcodec-freeworld mesa-va-drivers-freeworld
 
+
+# extensions
+
+sudo dnf install -y pipx
+
+pipx install gnome-extensions-cli --system-site-packages
+~/.local/bin/gnome-extensions-cli install dash-to-panel@jderose9.github.com
+
 #night theme
 
 # install and set https://extensions.gnome.org/extension/2236/night-theme-switcher/
