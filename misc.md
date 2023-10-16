@@ -45,3 +45,8 @@ Better caching
 ```
 cvlc --sub-file subtitles.srt -vvv "movie.mp4" --sout '#transcode{vcodec=x264,acodec=mp3,ab=320,channels=2,samplerate=44100,soverlay}:std{access=rtmp,mux=ffmpeg{mux=flv},dst=rtmp://address}' --rtp-caching=30000 --udp-caching=30000 --sout-mux-caching=15000 --http-caching=30000 --tcp-caching=30000 --file-caching=10000
 ```
+
+
+# create OVH S3 FS with juiceFS:
+
+juicefs format     --storage s3     --bucket https://<bucket>.s3.<region>.io.cloud.ovh.net  --access-key <key> --secret-key <secret> "sqlite3://<storage-name>.db" <bucket>
