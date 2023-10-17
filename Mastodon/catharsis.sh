@@ -1,11 +1,11 @@
 #!/bin/bash
 export DOCKER_BUILDKIT=1
-rm mastodon.old -R
-cd mastodon
+rm catharsis.old -R
+cd catharsis
 docker-compose run --rm web bundle exec bin/tootctl media remove
 cd ..
-cp mastodon mastodon.old -R
-cd mastodon
+cp catharsis catharsis.old -R
+cd catharsis
 git stash
 git pull --rebase
 git stash pop

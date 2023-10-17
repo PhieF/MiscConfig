@@ -34,7 +34,7 @@ sudo mount --make-rslave /tmp/"$BACKUPNAME"/nc
 pg_dump --format=custom --file "sql.dump" -p "$5" -h "$6" -U "$3" "$4"
 mv "$1"/nextcloud*.log* ./
 
-borg create -v --stats --files-cache mtime,size --list "$7"::"${DATE}" nc data "sql.dump" --compression=lz4
+borg create -v --stats --files-cache mtime,size --list "$7"::"${DATE}" nc data "sql.dump" --compression=lz4 --exclude 'data/nextcloud.log*'
 rm "sql.dump"
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$7"
 sudo umount -R /tmp/"$BACKUPNAME"/nc
