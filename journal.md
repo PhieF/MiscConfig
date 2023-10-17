@@ -3,12 +3,12 @@
 First thing:
 
 fixed my peertube chat by adding
-
+```
   # Plugin websocket routes
   location ~ ^/plugins/[^/]+(/[^/]+)?/ws/ {
     try_files /dev/null @api_websocket;
   }
-
+```
 to the nginx conf 
 
 Also moved everything to s3ql  with a weird conf
