@@ -1,3 +1,33 @@
+18/10/23
+
+How to... turn your robot vacuum into a web server :D
+
+this website is currently running on my robot vacuum: https://robot.salcie.fi
+
+This is a Viomi v2
+
+The first thing I did was following this tutorial to get a root acccess through ssh:
+
+https://github.com/Hypfer/valetudo-crl200s-root#5-install-valetudo
+
+Then I've just pushed a simple http server binary from here https://github.com/TheWaWaR/simple-http-server
+
+```
+cat armv7-unknown-linux-musleabihf-simple-http-server | ssh root@ip "cat > /root/armv7-unknown-linux-musleabihf-simple-http-server"
+```
+and ran the server !
+
+That's it :D 
+
+Stupid but funny
+
+
+
+About choosing S3QL over usual S3:
+
+Peertube doesn't allow yet to switch S3 providers OR to go back to local storage, that explain yesterday's choice
+
+
 17/10/23
 
 
