@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+
+  syncv3:
+    image: "ghcr.io/matrix-org/sliding-sync:latest"
+    environment:
+      - SYNCV3_SERVER=https://domain
+      - SYNCV3_SECRET= # result of echo -n "$(openssl rand -hex 32)"
+      - SYNCV3_BINDADDR=:8009
+      - SYNCV3_DB=user=[USER] dbname=syncv3 sslmode=disable  host=db  password=[PASSWORD]
+    networks:
+      - internal_network
+      - external_network
+    depends_on:
+      - db
+    ports:
+      - "8009:8009"
+
+  db:
+    image: "postgres:13"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=[USER]
+      - POSTGRES_PASSWORD=[PASSWORD]
+      - POSTGRES_DB=syncv3
+    networks:
+      - internal_network
+
+networks:
+  external_network:
+  internal_network:
+    internal: true
