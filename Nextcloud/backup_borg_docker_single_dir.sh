@@ -29,3 +29,4 @@ docker-compose exec -T db sh -c 'rm /"dump.sql"'
 borg create  "$6"::"${DATE}" * --compression=lz4 --exclude '*/nextcloud.log*'
 rm dump.sql
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$6"
+borg compact  "$6"

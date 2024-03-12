@@ -34,3 +34,4 @@ umount /tmp/"$BACKUPNAME"/data
 umount /tmp/"$BACKUPNAME"/synapse_conf
 rm "/tmp/$BACKUPNAME/psql.dump"
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$7"
+borg compact "$7"

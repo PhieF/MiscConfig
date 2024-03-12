@@ -55,6 +55,7 @@ cd /tmp/"$BACKUPNAME"
 #save config + storage
 borg create -p  --files-cache mtime,size "$8"::"${DATE}" config storage "dump.sql" --compression=lz4
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$8"
+borg compact "$8"
 umount -R /tmp/"$BACKUPNAME"/config
 umount -R /tmp/"$BACKUPNAME"/storage
 cd /tmp

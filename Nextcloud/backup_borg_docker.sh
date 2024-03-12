@@ -51,5 +51,6 @@ borg create  "$6"::"${DATE}" nc data "dump.sql" docker-compose.yml --compression
 rm "/tmp/$SQLNAME.sql"
 #mv nextcloud*.log* "$1"/
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$6"
+borg compact "$6"
 sudo umount -R  /tmp/"$BACKUPNAME"/data | true
 sudo umount -R  /tmp/"$BACKUPNAME"/nc | true
