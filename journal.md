@@ -1,3 +1,19 @@
+15/04/24
+
+An Ardour Story....
+
+I've recorded 12 hours of audio on Sartuday's Evening for the XUL Festival, without noticing that records are done in Wave, which is a 32bits format limited to 3,9gB files, so around 6 hours 12 minutes
+Ardour continued writing into files so files were about 8 gB but only 3,9 readable 
+
+fortunately, I was able to recover files using sndfile-salvage
+```
+sudo apt install sndfile-programs
+sndfile-salvage wave-file-incomplete.wav new-working-file.w64
+
+```
+
+And... fixed !
+
 18/10/23
 
 How to... turn your robot vacuum into a web server :D
