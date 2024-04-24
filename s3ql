@@ -1,0 +1,18 @@
+systemd file
+
+Wants=network-online.target
+
+[Service]
+#Type=forking
+ExecStartPre=fsck.s3ql --authfile /root/.passwd-s3ql s3c://bucket --force  --keep-cache --quiet --cachedir /home/s3ql-cache/
+ExecStart=mount.s3ql --cachesize 10485760  --authfile /root/.passwd-s3ql s3c://bucket /mnt/s3/exode.me/ --allow-other --cachedir /home/s3ql-cache/ --keep-cache --debug --systemd
+ExecStop=umount.s3ql /mnt/s3/exode.me
+ExecStopPost=/bin/bash -c "umount /mnt/s3/exode.me || true"
+TimeoutSec=900
+Restart=always
+RestartSec=5s
+ 
+ 
+ 
+[Install]
+WantedBy=multi-user.target
