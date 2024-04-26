@@ -1,3 +1,12 @@
+26/04/24
+
+Nextcloud failing when downloading more than 1024mo ?
+Add this to your nginx reverse proxy conf:
+
+        proxy_max_temp_file_size 16384m;
+
+
+
 15/04/24
 
 An Ardour Story....
