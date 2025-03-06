@@ -26,7 +26,7 @@ docker-compose exec -T db sh -c 'mysqldump -u '"$3"' -p'"$4"' '"$5"'  >/"dump.sq
 docker cp "$(docker-compose ps -q db)":/"dump.sql" ./dump.sql
 cp docker-compose.yml /tmp/"$BACKUPNAME"/
 docker-compose exec -T db sh -c 'rm /"dump.sql"'
-borg create  "$6"::"${DATE}" * --compression=lz4 --exclude '*/nextcloud.log*'
+borg create  "$6"::"${DATE}" * --compression=lz4 --verbose --exclude '*/nextcloud.log*'
 rm dump.sql
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$6"
 borg compact  "$6"

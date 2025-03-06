@@ -3,7 +3,7 @@
 
 if [ "$#" -lt "6" ]
         then 
-        echo "Usage $0 datadir synapse_conf_dir dbusername database dbport dbserver backupdir tmp_name [protocol]";
+        echo "Usage $0 synapse_volume nothing dbusername database dbport nothing backupdir tmp_name [protocol]";
         exit 1
         fi
 protocol=""
@@ -20,11 +20,9 @@ else
 DATE=`date '+%Y-%m-%d %H%M%S'`
 BACKUPNAME=`basename "$8"`_synapse
 cd /tmp
-mkdir /tmp/"$BACKUPNAME"/data -p
-mkdir /tmp/"$BACKUPNAME"/synapse_conf -p
+mkdir /tmp/"$BACKUPNAME"/synapse -p
 cd "$BACKUPNAME"
-mount --bind "$1" /tmp/"$BACKUPNAME"/data
-mount --bind "$2" /tmp/"$BACKUPNAME"/synapse_conf
+mount --bind "$1" /tmp/"$BACKUPNAME"/synapse
 #requires ~/.pgpass file dbserver:dbport:database:dbusername:dbpassword
 pg_dump --format=custom  -p "$5" -h "$6" -U "$3" "$4" > "/tmp/$BACKUPNAME/psql.dump"
 

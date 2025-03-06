@@ -31,7 +31,7 @@ sudo umount /tmp/"$BACKUPNAME"/nc | true
 sudo umount /tmp/"$BACKUPNAME"/db | true
 sudo mount --rbind "$1" /tmp/"$BACKUPNAME"/data
 sudo mount --rbind "$2" /tmp/"$BACKUPNAME"/nc
-sudo mount --rbind "$8/$2" /tmp/"$BACKUPNAME"/db
+#sudo mount --rbind "$8/$2" /tmp/"$BACKUPNAME"/db
 sudo mount --make-rslave /tmp/"$BACKUPNAME"/data
 
 cd "$8"
