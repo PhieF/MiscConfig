@@ -35,10 +35,10 @@ sudo mount --rbind "$2" /tmp/"$BACKUPNAME"/nc
 sudo mount --make-rslave /tmp/"$BACKUPNAME"/data
 
 cd "$8"
-docker-compose exec -T db sh -c 'mysqldump -u '"$3"' -p'"$4"' '"$5"'  >/"dump.sql"'
-docker cp "$(docker-compose ps -q db)":/"dump.sql" /tmp/"$BACKUPNAME"/dump.sql
+docker compose exec -T db sh -c 'mysqldump -u '"$3"' -p'"$4"' '"$5"'  >/"dump.sql"'
+docker cp "$(docker compose ps -q db)":/"dump.sql" /tmp/"$BACKUPNAME"/dump.sql
 cp docker-compose.yml /tmp/"$BACKUPNAME"/
-docker-compose exec -T db sh -c 'rm /"dump.sql"'
+docker compose exec -T db sh -c 'rm /"dump.sql"'
 cd /tmp/"$BACKUPNAME"
 #XZ_OPT="--threads=8" tar cfJ "/tmp/$DATE.sql.tar.xz" "/tmp/$DATE.sql"
 #rm "/tmp/$DATE.sql"
@@ -47,7 +47,7 @@ cd /tmp/"$BACKUPNAME"
 #mv "$1"/nextcloud*.log* ./
 #rsync -av --del --stats "$1" $protocol "$6"/data
 #rsync -av --del --stats "$2" $protocol "$6"/nc
-borg create  "$6"::"${DATE}" nc data "dump.sql" docker-compose.yml --compression=lz4 --exclude 'data/nextcloud.log*'
+borg create -p "$6"::"${DATE}" nc data "dump.sql" docker-compose.yml --compression=lz4 --exclude 'data/nextcloud.log*'
 rm "/tmp/$SQLNAME.sql"
 #mv nextcloud*.log* "$1"/
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$6"

@@ -22,10 +22,9 @@ timestamp=$(date +%s)
 BACKUPNAME="$7"_nextcloud
 
 cd "$8"
-docker-compose exec -T db sh -c 'mysqldump -u '"$3"' -p'"$4"' '"$5"'  >/"dump.sql"'
-docker cp "$(docker-compose ps -q db)":/"dump.sql" ./dump.sql
-cp docker-compose.yml /tmp/"$BACKUPNAME"/
-docker-compose exec -T db sh -c 'rm /"dump.sql"'
+docker compose exec -T db sh -c 'mysqldump -u '"$3"' -p'"$4"' '"$5"'  >/"dump.sql"'
+docker cp "$(docker compose ps -q db)":/"dump.sql" ./dump.sql
+docker compose exec -T db sh -c 'rm /"dump.sql"'
 borg create  "$6"::"${DATE}" * --compression=lz4 --verbose --exclude '*/nextcloud.log*'
 rm dump.sql
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$6"

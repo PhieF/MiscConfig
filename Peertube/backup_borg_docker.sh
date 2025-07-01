@@ -48,12 +48,12 @@ cd $PEERTUBE_ROOT_FOLDER
 
 
 #requires ~/.pgpass file localhost:5432:peertube-db:peertube-db-username:password
-docker exec -i $(sudo docker-compose ps -q postgres) pg_dump --format=custom --file "dump.sql" -p $PEERTUBE_DB_PORT -h $PEERTUBE_DB_HOST -U $PEERTUBE_USERNAME $PEERTUBE_DB
-docker cp "$(docker-compose ps -q postgres)":/"dump.sql" /tmp/"$BACKUPNAME"/dump.sql
-docker-compose exec -T postgres sh -c 'rm /"dump.sql"'
+docker exec -i $(sudo docker compose ps -q postgres) pg_dump --format=custom --file "dump.sql" -p $PEERTUBE_DB_PORT -h $PEERTUBE_DB_HOST -U $PEERTUBE_USERNAME $PEERTUBE_DB
+docker cp "$(docker compose ps -q postgres)":/"dump.sql" /tmp/"$BACKUPNAME"/dump.sql
+docker compose exec -T postgres sh -c 'rm /"dump.sql"'
 cd /tmp/"$BACKUPNAME"
 #save config + storage
-borg create -p  --files-cache mtime,size "$8"::"${DATE}" config storage "dump.sql" --compression=lz4
+borg create -p  --files-cache mtime,size "$8"::"${DATE}" config storage "dump.sql" --exclude storage/logs/ --compression=lz4
 borg prune --keep-daily=7 --keep-weekly=4 --keep-monthly=12 "$8"
 borg compact "$8"
 umount -R /tmp/"$BACKUPNAME"/config
